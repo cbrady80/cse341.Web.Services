@@ -7,12 +7,11 @@ const app = express();
 // Save a port number
 const port = 5000;
 
-// GET request
-app.get('/', (req, res) => {
-    res.sendFile('index.html', {root: __dirname});
-  });
+// Calls the routes to view the data
+app.use('/', require('./routes/index'));
 
 // Event Listener
-app.listen(port, () => {
-    console.log(`Now listening on port ${port}`);
-}); 
+app.listen(process.env.port || port);
+
+// Log message
+console.log('Web Server is listening at port ' + (process.env.port || port));

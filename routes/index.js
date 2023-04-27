@@ -16,7 +16,7 @@ const router = express.Router();
 // router.get('/jack', week1Controller.jackRoute);
 
 // USE request for WEEK 2
-router.use('/contacts', require('./contacts'));
+router.use('/contacts', require('./contacts'))
 
 // Export
 module.exports = router;

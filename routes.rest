@@ -1,5 +1,10 @@
 // LOCAL HOST
-GET http://localhost:5000
+GET http://localhost:5000/contacts
+###
+GET http://localhost:5000/contacts/<<contactIDgoesHere>>
 
+
+
+// PRODUCTION (RENDER) DEPLOY
 ###
 GET https://cse341-spring23-dfu6.onrender.com

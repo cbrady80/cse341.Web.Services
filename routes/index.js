@@ -1,5 +1,6 @@
-// Express package Router
-const routes = require('express').Router();
+// Import Express package Router
+const express = require('express');
+const router = express.Router();
 
 // Import controller - WEEK 1
 //const week1Controller = require('../controllers/week1');
@@ -9,13 +10,13 @@ const routes = require('express').Router();
 //     res.sendFile('index.html', {root: __dirname});
 //   });
 // GET requests for WEEK 1
-// routes.get('/', week1Controller.krisRoute);
-// routes.get('/paige', week1Controller.paigeRoute);
-// routes.get('/brooke', week1Controller.brookeRoute);
-// routes.get('/jack', week1Controller.jackRoute);
+// router.get('/', week1Controller.krisRoute);
+// router.get('/paige', week1Controller.paigeRoute);
+// router.get('/brooke', week1Controller.brookeRoute);
+// router.get('/jack', week1Controller.jackRoute);
 
 // USE request for WEEK 2
-routes.use('/contacts', require('./contacts'))
+router.use('/contacts', require('./contacts'));
 
 // Export
-module.exports = routes;
+module.exports = router;

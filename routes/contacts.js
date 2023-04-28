@@ -10,7 +10,7 @@ const contactsController = require('../controllers/contacts');
 router.get('/', contactsController.getAllContacts);
 
 //Route for receiving one single contact by id
-router.get('/getContactById', contactsController.getContactById);
+router.get('/:id', contactsController.getContactById);
 
 // Export
 module.exports = router;

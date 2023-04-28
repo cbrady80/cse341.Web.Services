@@ -28,5 +28,3 @@ mongodb.initDb((err, mongodb) => {
         console.log(`Connected to DB and listening at port ${port}`);
     }
 });
-
-//module.exports = app;

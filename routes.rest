@@ -1,8 +1,13 @@
 // LOCAL HOST
 GET http://localhost:5000/contacts
 ###
-GET http://localhost:5000/contacts/<<contactIDgoesHere>>
-
+GET http://localhost:5000/contacts/644abcbd9ba9cd0fc249af7a
+###
+GET http://localhost:5000/contacts/644abd949ba9cd0fc249af7b
+###
+GET http://localhost:5000/contacts/644abe419ba9cd0fc249af7c
+###
+GET http://localhost:5000/contacts/644abe909ba9cd0fc249af7d
 
 
 // PRODUCTION (RENDER) DEPLOY

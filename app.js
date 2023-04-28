@@ -1,6 +1,6 @@
 // Import the dependencies
 const express = require('express');
-//const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 const mongodb = require('./db/connection');
 
 // Instantiate an express app object
@@ -11,12 +11,12 @@ const port = process.env.PORT || 5000;
 
 
 app
-    // .use(bodyParser.json())
-    // .use((req, res, next) => {
-    //     res.setHeader('Access-Control-Allow-Origin', '*');
-    //     next();
-    // })
-    .use('/', require('./routes/index')); // Calls the routes to view the data
+    .use(bodyParser.json())
+    .use((req, res, next) => {
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        next();
+    })
+    .use('/', require('./routes')); // Calls the routes to view the data
 
 mongodb.initDb((err, mongodb) => {
     if (err) {
@@ -28,3 +28,5 @@ mongodb.initDb((err, mongodb) => {
         console.log(`Connected to DB and listening at port ${port}`);
     }
 });
+
+//module.exports = app;

@@ -12,4 +12,12 @@ GET http://localhost:5000/contacts/644abe909ba9cd0fc249af7d
 
 // PRODUCTION (RENDER) DEPLOY
 ###
-GET https://cse341-spring23-dfu6.onrender.com
+GET https://cse341-spring23-dfu6.onrender.com/contacts
+###
+GET https://cse341-spring23-dfu6.onrender.com/contacts/644abcbd9ba9cd0fc249af7a
+###
+GET https://cse341-spring23-dfu6.onrender.com/contacts/644abd949ba9cd0fc249af7b
+###
+GET https://cse341-spring23-dfu6.onrender.com/contacts/644abe419ba9cd0fc249af7c
+###
+GET https://cse341-spring23-dfu6.onrender.com/contacts/644abe909ba9cd0fc249af7d

@@ -1,5 +1,6 @@
-// In this file, this is where we make the call to MongoDB and return the data
+// This is where we make the call to MongoDB and return the data
 
+const { response } = require('express');
 const mongodb = require('../db/connection');
 const ObjectId = require('mongodb').ObjectId;
 
@@ -46,27 +47,22 @@ const newContact = async (req, res, next) => {
         .collection('contacts')
         .insertOne(contact);
     
-    const userId = new ObjectId(req.params.id);
-    if (response.acknowledged) {
-        result.toArray().then((lists) => {
-            res.setHeader('Content-Type', 'application/json');
-            res.send({_id: userId});
-            res.status(200).json(lists);
-        });
+    if (result.acknowledged) {
+        res.status(201).json(result);
     } else {
-        res.status(500).json(response.error || 'An error occurred.  Contact not created.');
+        res.status(500).json(result.error || 'An error occurred.  Contact not created.');
     };
-    
-}
+};
 
 // Function to UPDATE an exsisting contact
-updateContact
+//const updateContact
 
 // Function to DELETE an existing contact
-deleteContact
+//const deleteContact
 
 
 module.exports = {
     getAllContacts,
-    getContactById
+    getContactById,
+    newContact
 };

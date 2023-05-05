@@ -8,15 +8,18 @@ const contactsController = require('../controllers/contacts');
 
 //Route for retreiving all contacts
 router.get('/', contactsController.getAllContacts);
+
 //Route for retreiving one single contact by id
 router.get('/:id', contactsController.getContactById);
 
 //Route for creating a new contact - POST
 router.post('/', contactsController.newContact);
+
 //Route for updating an exsisting contact - PUT
-router.put('/', contactsController.updateContact);
+//router.put('/:id', contactsController.updateContact);
+
 //Route for deleting a contact - DELETE
-router.delete('/', contactsController.deleteContact);
+//router.delete('/:id', contactsController.deleteContact);
 
 
 // Exports

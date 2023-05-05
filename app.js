@@ -1,9 +1,9 @@
 // Import the dependencies
 const express = require('express');
-const bodyParser = require('body-parser');
+const bodyParser = require('body-parser'); // helps us decode the body from an HTTP request
 const mongodb = require('./db/connection');
 
-// Instantiate an express app object
+// Instantiate an express object
 const app = express();
 
 // Save a port number

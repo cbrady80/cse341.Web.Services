@@ -16,10 +16,10 @@ router.get('/:id', contactsController.getContactById);
 router.post('/', contactsController.newContact);
 
 //Route for updating an exsisting contact - PUT
-//router.put('/:id', contactsController.updateContact);
+router.put('/:id', contactsController.updateContact);
 
 //Route for deleting a contact - DELETE
-//router.delete('/:id', contactsController.deleteContact);
+router.delete('/:id', contactsController.deleteContact);
 
 
 // Exports

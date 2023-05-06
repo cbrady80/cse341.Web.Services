@@ -22,6 +22,22 @@ Content-type: application/json
     "birthday":"05/02/2013"
 }
 
+// LOCAL HOST - UPDATE CONTACT
+###
+PUT http://localhost:5000/contacts/645565779c9662683609459e HTTP/1.1
+Content-type: application/json
+
+{
+    "firstName":"Jack", 
+    "lastName":"Brady", 
+    "email":"jack@fakeemail.com", 
+    "favoriteColor":"blue", 
+    "birthday":"08/25/2016"
+}
+
+// LOCAL HOST - DELETE CONTACT
+###
+DELETE http://localhost:5000/contacts/6455528fd8d4a46098685bdf HTTP/1.1
 
 // PRODUCTION (RENDER) DEPLOY - GET CONTACTS
 ###

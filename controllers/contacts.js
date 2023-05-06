@@ -55,14 +55,57 @@ const newContact = async (req, res, next) => {
 };
 
 // Function to UPDATE an exsisting contact
-//const updateContact
+const updateContact = async (req, res, next) => {
+    const userId = new ObjectId(req.params.id);
+
+    const contact = {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        favoriteColor: req.body.favoriteColor,
+        birthday: req.body.birthday
+    };
+
+    const result = await mongodb
+        .getDb()
+        .db()
+        .collection('contacts')
+        .updateOne(
+            {_id: userId},
+            {$set: contact}
+        );
+
+    console.log(result);
+    if (result.acknowledged) {
+        res.status(204).send();
+    } else {
+        res.status(500).json(result.error || 'An error occurred.  Contact not updated.');
+    };
+};
 
 // Function to DELETE an existing contact
-//const deleteContact
+const deleteContact = async (req, res, next) => {
+    const userId = new ObjectId(req.params.id);
+
+    const result = await mongodb
+        .getDb()
+        .db()
+        .collection('contacts')
+        .deleteOne({_id: userId});
+
+    console.log(result);
+    if (result.deletedCount > 0) {
+        res.status(200).send();
+    } else {
+        res.status(500).json(result.error || 'An error occurred.  Contact not deleted.');
+    };
+};
 
 
 module.exports = {
     getAllContacts,
     getContactById,
-    newContact
+    newContact,
+    updateContact,
+    deleteContact
 };

@@ -15,8 +15,19 @@ const router = express.Router();
 // router.get('/brooke', week1Controller.brookeRoute);
 // router.get('/jack', week1Controller.jackRoute);
 
+// USE request for WEEK 4 - swagger
+router.use('/', require('./swagger'));
 // USE request for WEEK 2
-router.use('/contacts', require('./contacts'))
+router.use('/contacts', require('./contacts'));
+router.use(
+    '/',
+    (docData = (req, res) => {
+      let docData = {
+        documentationURL: 'https://github.com/cbrady80/cse341.Web.Services',
+      };
+      res.send(docData);
+    })
+  );
 
 // Export
 module.exports = router;

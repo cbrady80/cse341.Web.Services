@@ -58,10 +58,10 @@ POST https://cse341-spring23-dfu6.onrender.com/contacts HTTP/1.1
 Content-type: application/json
 
 {
-    "firstName":"Candice", 
-    "lastName":"Walker", 
-    "email":"candice@fakeemail.com", 
-    "favoriteColor":"teal", 
+    "firstName":"TEST", 
+    "lastName":"ONE", 
+    "email":"TEST@fakeemail.com", 
+    "favoriteColor":"TEST", 
     "birthday":"12/03/1978"
 }
 

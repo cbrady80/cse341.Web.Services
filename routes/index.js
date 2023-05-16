@@ -23,7 +23,7 @@ router.use(
     '/',
     (docData = (req, res) => {
       let docData = {
-        documentationURL: 'https://github.com/cbrady80/cse341.Web.Services',
+        documentationURL: 'https://github.com/cbrady80/cse341.project1.contactsAPI',
       };
       res.send(docData);
     })

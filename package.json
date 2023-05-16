@@ -41,4 +41,3 @@
   "lint:fix": "eslint --fix",
   "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
 }
-// added so I could update new github link
